@@ -403,7 +403,8 @@ code {
 #search-form-wrap {
   height: 40px;
   line-height: 40px;
-  padding: 0 0 10px;
+  padding: 12px 15px;
+  float: right;
 }
 .header-inner #logo,
 .header-inner #logolong,
@@ -445,13 +446,13 @@ code {
     overflow: hidden;
     clip: rect(1px, 1px, 1px, 1px);
 }
-#main-nav ul li:hover > ul, 
-#main-nav ul li:hover > ul, 
-#main-nav ul .focus > ul, 
+#main-nav ul li:hover > ul,
+#main-nav ul li:hover > ul,
+#main-nav ul .focus > ul,
 #main-nav .focus > ul,
-#main-nav-mobile ul li:hover > ul, 
-#main-nav-mobile ul li:hover > ul, 
-#main-nav-mobile ul .focus > ul, 
+#main-nav-mobile ul li:hover > ul,
+#main-nav-mobile ul li:hover > ul,
+#main-nav-mobile ul .focus > ul,
 #main-nav-mobile .focus > ul{
     clip: inherit;
     overflow: inherit;
@@ -699,7 +700,7 @@ code {
   clear: both;
 }
 #main-nav-mobile .search-form {
-  display: none;  
+  display: none;
 }
 #main-nav-mobile .menu .search-form-input {
   padding: 0 10px;
@@ -1396,7 +1397,7 @@ ul.icons {
 			ul.icons li > * .label {
 				display: none;
 			}
-					
+
 #social-share {
   position: relative;
   top: -0.5em;
@@ -1430,7 +1431,7 @@ ul.icons {
     }
 	}
 
-  
+
     #social-share-nav .share-btn h3 {
       color: #ffffff;
     }
@@ -1773,12 +1774,12 @@ ol.toc {
 /* Code folding */
 /* Each code block button */
 .article-entry .code-folding-btn { margin-bottom: 4px; }
-.article-entry .row { 
+.article-entry .row {
     display: flex;
     border-bottom: solid 1px #d7d7d7;
 }
 .article-entry .collapse { display: none; }
-.article-entry .in { 
+.article-entry .in {
     display: block ;
     border: solid 1px #d7d7d7;
     border-radius: 5px;
@@ -2287,9 +2288,9 @@ ol.toc {
     height: 25px;
     padding: 25px 0 14px;
 }
-#header .outer .lang-switcher:hover > ul, 
-#header .outer .lang-switcher:hover > ul, 
-#header .outer .lang-switcher:focus > ul, 
+#header .outer .lang-switcher:hover > ul,
+#header .outer .lang-switcher:hover > ul,
+#header .outer .lang-switcher:focus > ul,
 #header .outer .focus > ul {
     clip: inherit;
     overflow: inherit;
