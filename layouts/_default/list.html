@@ -1,6 +1,6 @@
 {{ define "main" }}
     {{ $context := . }}
-    
+
     {{ with .Content }}
         {{ partial "single.html" $context }}
     {{ else }}
@@ -25,23 +25,21 @@
             </a>
         </div>
         <div class="article-inner">
-            {{ partial "article_header" . }}
-            <div class="article-entry" itemprop="articleBody">
-                <!-- <p>
-                    {{ .Description | default .Summary }}
-                </p> -->
-                {{ $.Scratch.Set "summary" ((delimit (findRE "(<p.*?>.*?</p>\\s*)+" .Content) "[&hellip;] ") | plainify | truncate (default 200 .Site.Params.summary_length) (default " &hellip;" .Site.Params.text.truncated ) | replaceRE "&amp;" "&" | safeHTML) }}
-
-                <p>{{ $.Scratch.Get "summary" }}</p>
-                <p class="article-more-link">
-                    <a href="{{ .Permalink }}" lang="{{ .Lang }}">
-                        {{ i18n "articles-read-more" }}
-                    </a>
-                </p>
-            </div>
+        {{ partial "article_header" . }}
+        <div class="article-entry" itemprop="articleBody">
+            <p>
+                {{ .Description | default .Summary }}
+            </p>
+            <p class="article-more-link">
+                <a href="{{ .Permalink }}">
+                    {{with .Site.Data.l10n.articles.read_more}}{{.}}{{end}}
+                </a>
+            </p>
         </div>
-    </article>
-    {{ end }}
+        {{ partial "article_footer" . }}
+    </div>
+</article>
+{{ end }}
   </div>
 </section>
 {{ partial "pagination" . }}
