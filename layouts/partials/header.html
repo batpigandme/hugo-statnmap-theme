@@ -14,24 +14,21 @@
         {{end}}
       </a>
       <nav id="main-nav">
-         <div class="navbar-collapse collapse" id="navigation">
-            <ul class="nav navbar-nav navbar-right">
-              {{ range .Site.Menus.main }}
-              <li class="main-dropdown">
-                {{ if .HasChildren }}
-                  <a href="{{ .URL | relLangURL }}" class="main-dropdown-toggle" data-toggle="main-dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ .Name }} <span class="caret"></span></a>
-                <ul class="main-dropdown-menu">
-                  {{ range .Children }}
-                    <li><a href="{{ .URL | relLangURL }}">{{ .Name }}</a></li>
-                  {{ end }}
-                </ul>
-                {{ else }}
-                <a href="{{ .URL | relLangURL }}">{{ .Name }}</a>
-                {{ end  }}
-              </li>
-              {{ end }}
-            </ul>
-          </div>
+          {{ range .Site.Params.menu }}
+          {{ if .before }}
+          <a class="main-nav-link" href="{{ .link | absURL }}">{{ .label }}</a>
+          {{ end }}
+          {{ end }}
+
+          {{ range .Site.Menus.main }}
+          <a class="main-nav-link" href="{{ .URL }}">{{ .Name }}</a>
+          {{ end }}
+
+          {{ range .Site.Params.menu }}
+          {{ if not .before }}
+          <a class="main-nav-link" href="{{ .link | absURL }}">{{ .label }}</a>
+          {{ end }}
+          {{ end }}
       </nav>
         <nav id="sub-nav">
           <div class="profile" id="profile-nav">
@@ -43,10 +40,10 @@
           <div class="lang-switcher-nav">
             {{ partial "widgets/language_switcher" . }}
           </div>
-          {{ end }}  
-        </nav>   
-    </div>     
-  </div> 
+          {{ end }}
+        </nav>
+    </div>
+  </div>
   <div id="main-nav-mobile" class="header-sub header-inner">
       <div class="navbar-collapse collapse" id="navigation">
         <ul class="nav navbar-nav navbar-right">
@@ -66,7 +63,7 @@
           {{ end }}
         </ul>
       </div>
-            
+
     <table class="menu outer search-form">
       <tbody>
           <tr>
@@ -79,6 +76,6 @@
       </tr>
       </tbody>
     </table>
-  </div>  
+  </div>
 </header>
 
