@@ -440,7 +440,7 @@ code {
     padding: 0;
     position: absolute;
     left: -2px;
-    z-index: 99999;
+    z-index: 999;
     height: 1px;
     width: 1px;
     overflow: hidden;
@@ -552,6 +552,11 @@ code {
 @media screen and (min-width: 800px) {
   #main-nav-mobile {
     display: none;
+  }
+}
+@media screen and (max-width: 799px) {
+  #main-nav-mobile {
+      display: contents;
   }
 }
 .nav-icon,
@@ -2266,7 +2271,7 @@ ol.toc {
 #header .outer .lang-switcher .main-dropdown-menu {
     padding: 0;
     position: absolute;
-    z-index: 99999;
+    z-index: 999;
     height: 1px;
     width: 1px;
     overflow: hidden;
