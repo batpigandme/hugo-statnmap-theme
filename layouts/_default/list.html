@@ -5,9 +5,11 @@
         {{ partial "single.html" $context }}
     {{ else }}
 <section class="archives-wrap">
+  {{ if ne .URL "/" -}}
   <div class="archive-category-wrap">
       <span class="archive-category">{{ .Title }}</span>
   </div>
+  {{- end }}
   <div class="archives">
     {{ range .Data.Pages }}
     <article class="article article-type-post" itemscope="" itemprop="blogPost">
